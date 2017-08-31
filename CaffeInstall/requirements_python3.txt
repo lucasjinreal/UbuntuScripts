@@ -1,0 +1,16 @@
+Cython
+numpy
+scipy
+scikit-image
+matplotlib
+ipython
+h5py
+leveldb
+networkx
+nose
+pandas
+protobuf
+python-gflags
+pyyaml
+Pillow
+six

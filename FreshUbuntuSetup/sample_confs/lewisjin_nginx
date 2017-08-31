@@ -1,0 +1,161 @@
+server{
+	listen 80;
+	listen [::]:80;
+	server_name www.lewisjin.xyz;
+	return      301 https://$server_name$request_uri;
+}
+server{
+        listen 80;
+        listen [::]:80;
+        server_name lewisjin.xyz;
+	return      301 https://$server_name$request_uri;
+}
+
+server{
+        listen 80;
+        listen [::]:80;
+        server_name 139.199.158.201;
+	return      301 https://$server_name$request_uri;
+}
+         
+server {
+	listen 443;
+	listen [::]:443;
+
+	server_name www.lewisjin.xyz;
+
+	charset utf-8;
+	#配置https ssl证书
+	ssl on;
+        ssl_certificate /etc/nginx/conf.d/1_lewisjin.xyz_bundle.crt;
+        ssl_certificate_key /etc/nginx/conf.d/2_lewisjin.xyz.key;
+        ssl_session_timeout 5m;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2; #按照这个协议配置
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;#按照这个套件配置
+        ssl_prefer_server_ciphers on;
+	
+	#root /var/www/html/;
+	#index index.html;
+
+	# let nginx parse url, and let all this urls
+	# let gunicorn sovle them!
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		proxy_pass https://127.0.0.1:8100;
+		try_files $uri $uri/ =404;
+	}
+
+	location /admin{
+		proxy_pass https://127.0.0.1:8100;
+	}
+	location /about {
+		proxy_pass https://127.0.0.1:8100;
+	}
+	location /api{
+		proxy_pass https://127.0.0.1:8100;
+	}
+	location /static/ {
+		autoindex on;
+		alias /home/ubuntu/WebSites/oumenglite/collected_static/;
+   	 }
+	location /media/ {
+		alias /home/ubuntu/WebSites/oumenglite/media/;
+	}
+}
+server {
+	
+
+	listen 443;
+	listen [::]:443;
+
+	server_name lewisjin.xyz;
+
+	charset utf-8;
+	#配置https ssl证书
+        ssl on;
+        ssl_certificate /etc/nginx/conf.d/1_lewisjin.xyz_bundle.crt;
+        ssl_certificate_key /etc/nginx/conf.d/2_lewisjin.xyz.key;
+        ssl_session_timeout 5m;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2; #按照这个协议配置
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;#按照这个套件配置
+        ssl_prefer_server_ciphers on;
+
+	#root /var/www/html;
+	#index index.html;
+
+	# let nginx parse url, and let all this urls
+	# let gunicorn sovle them!
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		proxy_pass https://127.0.0.1:8100;
+		try_files $uri $uri/ =404;
+	}
+
+	location /admin{
+		proxy_pass https://127.0.0.1:8100;
+	}
+	location /about {
+		proxy_pass https://127.0.0.1:8100;
+	}
+	location /api{
+		proxy_pass https://127.0.0.1:8100;
+	}
+
+	location /static/ {
+		autoindex on;
+		alias /home/ubuntu/WebSites/oumenglite/collected_static/;
+    }
+	location /media/ {
+		alias /home/ubuntu/WebSites/oumenglite/media/;
+	}
+}
+server {
+	
+
+	listen 443;
+	listen [::]:443;
+
+	server_name 139.199.158.201;
+
+	charset utf-8;
+	#配置https ssl证书
+        ssl on;
+        ssl_certificate /etc/nginx/conf.d/1_lewisjin.xyz_bundle.crt;
+        ssl_certificate_key /etc/nginx/conf.d/2_lewisjin.xyz.key;
+        ssl_session_timeout 5m;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2; #按照这个协议配置
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;#按照这个套件配置
+        ssl_prefer_server_ciphers on;
+
+	#root /var/www/html;
+	#index index.html;
+
+	# let nginx parse url, and let all this urls
+	# let gunicorn sovle them!
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		proxy_pass https://127.0.0.1:8100;
+		try_files $uri $uri/ =404;
+	}
+
+	location /admin {
+		proxy_pass http://127.0.0.1:8100;
+	}
+	location /about{
+		proxy_pass http://127.0.0.1:8100;
+	}	
+	location /api{
+		proxy_pass http://127.0.0.1:8100;
+	}
+
+	location /static/ {
+		autoindex on;
+		alias /home/ubuntu/WebSites/oumenglite/collected_static/;
+    }
+	location /media/ {
+		alias /home/ubuntu/WebSites/oumenglite/media/;
+	}
+}

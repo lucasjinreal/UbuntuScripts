@@ -1,0 +1,4 @@
+# sublime regex find and replace
+# find number
+(\d+)
+means match a lot of numbers.
