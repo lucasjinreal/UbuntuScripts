@@ -33,7 +33,7 @@ echo "=========installing tweak tools and plank dock=========="
 sudo apt install -y unity-tweak-tool
 sudo apt install -y plank
 
-# change pip source to tsinghua mirror
+# change pip source to tsinghua / now is douban mirror
 cd ~
 mkdir .pip
 cd .pip
