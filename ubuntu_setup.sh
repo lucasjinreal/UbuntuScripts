@@ -1,4 +1,4 @@
-#!/bin/bash
+1;95;0c#!/bin/bash
 echo "=========installing Chinese input source=========="
 sudo add-apt-repository -y ppa:fcitx-team/nightly  
 sudo apt update
