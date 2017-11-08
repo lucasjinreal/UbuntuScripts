@@ -77,11 +77,12 @@ echo "============ installing Oracle Java8 =================="
 sudo add-apt-repository -y ppa:webupd8team/java
 sudo apt update; sudo apt install -y oracle-java8-installer
 
-echo "============ update cmake to a high level 3.8 ========="
-wget https://cmake.org/files/v3.8/cmake-3.8.2.tar.gz
-tar -xvf cmake-3.8.2.tar.gz
-cd cmake-3.8.2
-./bootstrap
+echo "============ update cmake to a high level 3.9 ========="
+wget https://cmake.org/files/v3.9/cmake-3.9.0.tar.gz
+tar -xvf cmake-3.9.0.tar.gz
+cd cmake-3.9.0
+sudo apt install -y curl
+./bootstrap --system-curl
 make -j8
 sudo make install
 
