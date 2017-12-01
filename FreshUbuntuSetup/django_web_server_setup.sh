@@ -21,10 +21,12 @@ sudo apt -y install libpq-dev
 # fix tencent-cloud issue
 echo export LC_ALL=C >> ~/.bashrc
 source ~/.bashrc
+echo export LC_ALL=C >> ~/.zshrc
+source ~/.zshrc
 
 # install python3 packages
 sudo pip3 install django
-sudo pip3 install gunicore
+sudo pip3 install gunicorn
 sudo pip3 install psycopg2
 sudo pip3 install djangorestframework
 sudo pip3 install pillow
