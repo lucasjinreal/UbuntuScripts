@@ -3,7 +3,7 @@
 
 # install pip3
 sudo apt update
-sudo apt install -i python3-pip
+sudo apt -y install python3-pip
 
 # install oh-my-zsh
 sudo apt -y install curl
@@ -51,4 +51,4 @@ wget https://raw.githubusercontent.com/gnachman/iTerm2/master/tests/imgcat
 mv imgcat /usr/local/bin
 echo "alias imgcat='bash /usr/local/bin/imgcat'" >> ~/.zshrc && source ~/.zshrc
 
-sudo reboot
+echo '# setup finished, you can now: sudo reboot'
