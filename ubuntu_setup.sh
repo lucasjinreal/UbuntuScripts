@@ -9,6 +9,8 @@ sudo apt install -y  im-switch
 echo "=========installing googlepinyin input method=========="
 sudo apt install -y fcitx-googlepinyin
 
+
+sudo apt install -y curl
 echo "=========installing google-chrome-stable=========="
 # some times this line con not get
 sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/
@@ -82,13 +84,16 @@ wget https://cmake.org/files/v3.9/cmake-3.9.0.tar.gz
 tar -xvf cmake-3.9.0.tar.gz
 cd cmake-3.9.0
 sudo apt install -y curl
+sudo apt install -y libcurl4-gnutls-dev
+sudo apt install -y libcurl4-openssl-dev
 ./bootstrap --system-curl
 make -j8
 sudo make install
 
 echo "======== install enssential libs ========="
 sudo apt install -y libgfortran3
-sudo apt-get install zlib1g-dev
+sudo apt-get install -y zlib1g-dev
+sudo apt install -y curl
 
 echo "======== install sublime text3 =================="
  sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
