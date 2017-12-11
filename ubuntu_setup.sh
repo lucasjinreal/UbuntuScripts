@@ -88,6 +88,7 @@ sudo make install
 
 echo "======== install enssential libs ========="
 sudo apt install -y libgfortran3
+sudo apt-get install zlib1g-dev
 
 echo "======== install sublime text3 =================="
  sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
