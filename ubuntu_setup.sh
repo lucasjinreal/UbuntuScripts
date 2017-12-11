@@ -74,6 +74,14 @@ sudo pip3 install matplotlib
 sudo pip3 install pandas
 sudo pip3 install keras
 sudo pip3 install scikit-image
+sudo pip3 install numpy
+sudo pip2 install --upgrade pip
+sudo pip2 install scipy
+sudo pip2 install matplotlib
+sudo pip2 install pandas
+sudo pip2 install keras
+sudo pip2 install scikit-image
+sudo pip2 install numpy
 
 echo "============ installing Oracle Java8 =================="
 sudo add-apt-repository -y ppa:webupd8team/java
