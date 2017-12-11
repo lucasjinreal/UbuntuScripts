@@ -1,4 +1,4 @@
-1;95;0c#!/bin/bash
+#!/bin/bash
 echo "=========installing Chinese input source=========="
 sudo add-apt-repository -y ppa:fcitx-team/nightly  
 sudo apt update
@@ -87,6 +87,12 @@ echo "============ installing Oracle Java8 =================="
 sudo add-apt-repository -y ppa:webupd8team/java
 sudo apt update; sudo apt install -y oracle-java8-installer
 
+echo "=========== install typora ============="
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE
+sudo add-apt-repository 'deb http://typora.io linux/'
+sudo apt-get update
+sudo apt-get install typora
+
 echo "============ update cmake to a high level 3.9 ========="
 wget https://cmake.org/files/v3.9/cmake-3.9.0.tar.gz
 tar -xvf cmake-3.9.0.tar.gz
@@ -102,6 +108,8 @@ echo "======== install enssential libs ========="
 sudo apt install -y libgfortran3
 sudo apt-get install -y zlib1g-dev
 sudo apt install -y curl
+# if lack this, chrome will not able to open
+sudo apt install -y libnss3
 
 echo "======== install sublime text3 =================="
  sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
