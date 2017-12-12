@@ -110,6 +110,9 @@ sudo apt-get install -y zlib1g-dev
 sudo apt install -y curl
 # if lack this, chrome will not able to open
 sudo apt install -y libnss3
+sudo apt install -y python3-tk
+sudo pip3 install matplotlib
+sudo apt install ffmpeg
 
 echo "======== install sublime text3 =================="
  sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
