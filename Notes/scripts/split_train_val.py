@@ -13,7 +13,8 @@ def split_train_val(data_dir, split=0.8):
     :return:
     """
     if os.path.exists(data_dir):
-        all_classes = [i for i in os.listdir(data_dir) if os.path.isdir(os.path.join(data_dir, i))]
+        all_classes = [i for i in os.listdir(data_dir) if os.path.isdir(os.path.join(data_dir, i))
+                       and i != 'train' and i != 'val' and not i.startswith('.')]
         print('# Find classes: ', ', '.join(all_classes))
         for cls in all_classes:
             print('# Now solving: ', cls)
@@ -31,6 +32,9 @@ def split_train_val(data_dir, split=0.8):
 
             move_files_to_des(train_files, target_train_dir)
             move_files_to_des(val_files, target_val_dir)
+        print('# All Done!')
+        for cls_d in [os.path.join(data_dir, i) for i in all_classes]:
+            shutil.rmtree(cls_d)
     else:
         print('{} not exist.'.format(data_dir))
 
@@ -46,6 +50,11 @@ def move_files_to_des(files_list, des):
     if os.path.exists(des):
         for f in files_list:
             if os.path.exists(f):
-                shutil.copytree(f, dst=des)
+                shutil.copy(f, dst=des)
     else:
         print('the destination dir not exist.')
+
+
+if __name__ == '__main__':
+    data_dir = sys.argv[1]
+    split_train_val(data_dir)
