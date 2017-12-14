@@ -8,9 +8,9 @@ sudo apt install -y fcitx-config-gtk
 sudo apt install -y  im-switch
 echo "=========installing googlepinyin input method=========="
 sudo apt install -y fcitx-googlepinyin
-
-
 sudo apt install -y curl
+
+
 echo "=========installing google-chrome-stable=========="
 # some times this line con not get
 sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/
@@ -48,6 +48,26 @@ sudo apt install -y unity-tweak-tool
 
 # install plank
 sudo apt install -y  plank
+
+echo "============== setup more beautiful icons ============"
+sudo add-apt-repository ppa:noobslab/icons
+sudo apt-get update
+sudo apt-get install -y ultra-flat-icons
+
+sudo add-apt-repository ppa:noobslab/icons
+sudo apt-get update
+sudo apt-get install -y ultra-flat-icons-orange
+
+sudo add-apt-repository ppa:noobslab/icons
+sudo apt-get update
+sudo apt-get install -y ultra-flat-icons-green
+
+sudo apt install -y ubuntukylin-theme
+sudo add-apt-repository ppa:noobslab/themes
+sudo add-apt-repository ppa:noobslab/icons
+sudo apt-get  update
+sudo apt-get install -y arc-flatabulous-theme
+sudo apt-get install -y ultra-flat-icons
 
 ## nemo file explorer
 sudo add-apt-repository -y ppa:webupd8team/nemo
@@ -122,6 +142,14 @@ echo "======== install sublime text3 =================="
 echo "=========installing zsh-a beautiful terminal=========="
 sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+
+echo "================ install emacs and setup for it===================="
+sudo apt install -y emacs
+wget https://github.com/jinfagang/UbuntuScripts/raw/master/confs/init.el -O ~/.emacs.d/
+
+
+
 echo "=========install imgcat================="
 wget https://github.com/jinfagang/UbuntuScripts/raw/master/ShellRepo/imgcat
 sudo mv imgcat /usr/local/bin/
