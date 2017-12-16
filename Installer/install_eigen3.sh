@@ -1,5 +1,5 @@
 cd ~
-git clone https://bitbucket.org/eigen/eigen
+git clone https://github.com/RLovelett/eigen.git
 cd eigen
 mkdir build
 cd build
