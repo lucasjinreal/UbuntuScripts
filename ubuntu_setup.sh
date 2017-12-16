@@ -1,4 +1,4 @@
-1;95;0c#!/bin/bash
+#!/bin/bash
 echo "=========installing Chinese input source=========="
 sudo add-apt-repository -y ppa:fcitx-team/nightly  
 sudo apt update
@@ -8,6 +8,8 @@ sudo apt install -y fcitx-config-gtk
 sudo apt install -y  im-switch
 echo "=========installing googlepinyin input method=========="
 sudo apt install -y fcitx-googlepinyin
+sudo apt install -y curl
+
 
 echo "=========installing google-chrome-stable=========="
 # some times this line con not get
@@ -47,6 +49,26 @@ sudo apt install -y unity-tweak-tool
 # install plank
 sudo apt install -y  plank
 
+echo "============== setup more beautiful icons ============"
+sudo add-apt-repository ppa:noobslab/icons
+sudo apt-get update
+sudo apt-get install -y ultra-flat-icons
+
+sudo add-apt-repository ppa:noobslab/icons
+sudo apt-get update
+sudo apt-get install -y ultra-flat-icons-orange
+
+sudo add-apt-repository ppa:noobslab/icons
+sudo apt-get update
+sudo apt-get install -y ultra-flat-icons-green
+
+sudo apt install -y ubuntukylin-theme
+sudo add-apt-repository ppa:noobslab/themes
+sudo add-apt-repository ppa:noobslab/icons
+sudo apt-get  update
+sudo apt-get install -y arc-flatabulous-theme
+sudo apt-get install -y ultra-flat-icons
+
 ## nemo file explorer
 sudo add-apt-repository -y ppa:webupd8team/nemo
 sudo apt-get update
@@ -72,20 +94,45 @@ sudo pip3 install matplotlib
 sudo pip3 install pandas
 sudo pip3 install keras
 sudo pip3 install scikit-image
+sudo pip3 install numpy
+sudo pip2 install --upgrade pip
+sudo pip2 install scipy
+sudo pip2 install matplotlib
+sudo pip2 install pandas
+sudo pip2 install keras
+sudo pip2 install scikit-image
+sudo pip2 install numpy
 
 echo "============ installing Oracle Java8 =================="
 sudo add-apt-repository -y ppa:webupd8team/java
 sudo apt update; sudo apt install -y oracle-java8-installer
+
+echo "=========== install typora ============="
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE
+sudo add-apt-repository 'deb http://typora.io linux/'
+sudo apt-get update
+sudo apt-get install typora
 
 echo "============ update cmake to a high level 3.9 ========="
 wget https://cmake.org/files/v3.9/cmake-3.9.0.tar.gz
 tar -xvf cmake-3.9.0.tar.gz
 cd cmake-3.9.0
 sudo apt install -y curl
+sudo apt install -y libcurl4-gnutls-dev
+sudo apt install -y libcurl4-openssl-dev
 ./bootstrap --system-curl
 make -j8
 sudo make install
 
+echo "======== install enssential libs ========="
+sudo apt install -y libgfortran3
+sudo apt-get install -y zlib1g-dev
+sudo apt install -y curl
+# if lack this, chrome will not able to open
+sudo apt install -y libnss3
+sudo apt install -y python3-tk
+sudo pip3 install matplotlib
+sudo apt install ffmpeg
 
 echo "======== install sublime text3 =================="
  sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
@@ -95,6 +142,14 @@ echo "======== install sublime text3 =================="
 echo "=========installing zsh-a beautiful terminal=========="
 sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+
+echo "================ install emacs and setup for it===================="
+sudo apt install -y emacs
+wget https://github.com/jinfagang/UbuntuScripts/raw/master/confs/init.el -O ~/.emacs.d/
+
+
+
 echo "=========install imgcat================="
 wget https://github.com/jinfagang/UbuntuScripts/raw/master/ShellRepo/imgcat
 sudo mv imgcat /usr/local/bin/
