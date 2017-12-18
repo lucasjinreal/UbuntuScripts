@@ -160,6 +160,10 @@ echo 'plugins=(git autojump)' >> ~/.zshrc
 
 source ~/.zshrc
 
+cd ~
+wget https://github.com/anmoljagetia/Flatabulous/releases/download/16.04.1/Flatabulous-Theme.deb
+sudo dpkg -i Flatabulous-Theme.deb
+
 
 
 
