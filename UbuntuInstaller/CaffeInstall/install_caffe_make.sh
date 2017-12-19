@@ -7,7 +7,7 @@ git clone https://github.com/BVLC/caffe.git --recursive
 sudo apt-get install -y libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libboost-all-dev libhdf5-serial-dev libgflags-dev libgoogle-glog-dev liblmdb-dev protobuf-compiler libopenblas-dev libatlas-base-dev liboost-all-dev
 cd caffe
 
-wget '' -O Makefile.config
+wget https://github.com/jinfagang/UbuntuScripts/raw/master/UbuntuInstaller/CaffeInstall/Makefile.config.right  -O Makefile.config
 
 cd /usr/lib/x86_64-linux-gnu
 sudo ln -s libhdf5_serial.so.8.0.2 libhdf5.so
