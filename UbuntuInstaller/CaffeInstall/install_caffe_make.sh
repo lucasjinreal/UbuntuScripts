@@ -23,6 +23,14 @@ sudo pip2 install -r python/requirements.txt
 
 cd ~/caffe
 sudo make pycaffe
+
+echo '-------------- now set for python path ---------------'
+sudo touch /usr/lib/python3/dist-packages/caffe.pth
+sudo echo '~/caffe/python' > /usr/lib/python3/dist-packages/caffe.pth
+
+echo 'now you can import caffe from python terminal'
+
+
 ./data/mnist/get_mnist.sh
 ./examples/mnist/create_mnist.sh
 ./examples/mnist/train_lenet.sh
