@@ -9,3 +9,7 @@ cd protobuf
 make -j32
 make check
 sudo make install
+
+# have to manually set protoc version
+# otherwise it will always generate the newest version
+sudo mv /usr/local/bin/protoc /usr/local/bin/protoc3.51
