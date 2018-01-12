@@ -12,4 +12,4 @@ sudo make install
 
 # have to manually set protoc version
 # otherwise it will always generate the newest version
-sudo mv /usr/local/bin/protoc /usr/local/bin/protoc3.51
+# sudo mv /usr/local/bin/protoc /usr/local/bin/protoc3.51
