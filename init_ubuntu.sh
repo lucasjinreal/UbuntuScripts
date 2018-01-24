@@ -50,21 +50,21 @@ sudo apt install -y unity-tweak-tool
 sudo apt install -y  plank
 
 echo "============== setup more beautiful icons ============"
-sudo add-apt-repository ppa:noobslab/icons
+sudo add-apt-repository -y ppa:noobslab/icons
 sudo apt-get update
 sudo apt-get install -y ultra-flat-icons
 
-sudo add-apt-repository ppa:noobslab/icons
+sudo add-apt-repository -y ppa:noobslab/icons
 sudo apt-get update
 sudo apt-get install -y ultra-flat-icons-orange
 
-sudo add-apt-repository ppa:noobslab/icons
+sudo add-apt-repository -y ppa:noobslab/icons
 sudo apt-get update
 sudo apt-get install -y ultra-flat-icons-green
 
 sudo apt install -y ubuntukylin-theme
-sudo add-apt-repository ppa:noobslab/themes
-sudo add-apt-repository ppa:noobslab/icons
+sudo add-apt-repository -y ppa:noobslab/themes
+sudo add-apt-repository -y ppa:noobslab/icons
 sudo apt-get  update
 sudo apt-get install -y arc-flatabulous-theme
 sudo apt-get install -y ultra-flat-icons
@@ -132,7 +132,8 @@ sudo apt install -y curl
 sudo apt install -y libnss3
 sudo apt install -y python3-tk
 sudo pip3 install matplotlib
-sudo apt install ffmpeg
+sudo apt install -y ffmpeg
+sudo apt install -y exfat-utils
 
 echo "======== install sublime text3 =================="
  sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
