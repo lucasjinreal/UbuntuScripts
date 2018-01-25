@@ -113,16 +113,6 @@ sudo add-apt-repository 'deb http://typora.io linux/'
 sudo apt-get update
 sudo apt-get install typora
 
-echo "============ update cmake to a high level 3.9 ========="
-wget https://cmake.org/files/v3.9/cmake-3.9.0.tar.gz
-tar -xvf cmake-3.9.0.tar.gz
-cd cmake-3.9.0
-sudo apt install -y curl
-sudo apt install -y libcurl4-gnutls-dev
-sudo apt install -y libcurl4-openssl-dev
-./bootstrap --system-curl
-make -j8
-sudo make install
 
 echo "======== install enssential libs ========="
 sudo apt install -y libgfortran3
@@ -134,6 +124,18 @@ sudo apt install -y python3-tk
 sudo pip3 install matplotlib
 sudo apt install -y ffmpeg
 sudo apt install -y exfat-utils
+
+echo "============ update cmake to a high level 3.9 ========="
+wget https://cmake.org/files/v3.9/cmake-3.9.0.tar.gz
+tar -xvf cmake-3.9.0.tar.gz
+cd cmake-3.9.0
+sudo apt install -y curl
+sudo apt install -y libcurl4-gnutls-dev
+sudo apt install -y libcurl4-openssl-dev
+./bootstrap --system-curl
+make -j8
+sudo make install
+
 
 echo "======== install sublime text3 =================="
  sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
