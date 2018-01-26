@@ -103,6 +103,12 @@ sudo pip2 install keras
 sudo pip2 install scikit-image
 sudo pip2 install numpy
 
+echo "================ install kate==================="
+cd ~/Downloads
+wget http://mirrors.ustc.edu.cn/kde/unstable/kate/Kate-16.08-x86_64.AppImage
+sudo chmod -R 777 Kate-16.08-x86_64.AppImage
+sudo mv Kate-16.08-x86_64.AppImage /usr/bin/kate
+
 echo "============ installing Oracle Java8 =================="
 sudo add-apt-repository -y ppa:webupd8team/java
 sudo apt update; sudo apt install -y oracle-java8-installer
