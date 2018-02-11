@@ -102,6 +102,10 @@ sudo pip2 install keras
 sudo pip2 install scikit-image
 sudo pip2 install numpy
 
+echo "============ install my python packages =========="
+sudo pip3 install alfred-py
+
+
 echo "================ install text editors (vim, emacs, kate etc.)==================="
 cd ~/Downloads
 wget http://mirrors.ustc.edu.cn/kde/unstable/kate/Kate-16.08-x86_64.AppImage
