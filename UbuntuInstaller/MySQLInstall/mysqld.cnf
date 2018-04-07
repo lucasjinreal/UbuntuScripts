@@ -37,6 +37,8 @@ nice		= 0
 default-storage-engine=INNODB
 character-set-server=utf8
 collation-server=utf8_general_ci
+#character-set-database=utf-8
+
 
 user		= mysql
 pid-file	= /var/run/mysqld/mysqld.pid
