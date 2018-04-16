@@ -1,10 +1,10 @@
 #!/bin/bash
 echo "=========installing Chinese input source=========="
-sudo add-apt-repository ppa:fcitx-team/nightly  
+sudo add-apt-repository ppa:fcitx-team/nightly
 sudo apt update
 sudo apt install fcitx
 sudo apt -f install
-sudo apt install fcitx-config-gtk 
+sudo apt install fcitx-config-gtk
 sudo apt install im-switch
 echo "=========installing googlepinyin input method=========="
 sudo apt install fcitx-googlepinyin
@@ -28,6 +28,12 @@ sudo pip3 install pandas
 sudo pip3 install keras
 sudo pip3 install scikit-image
 
+echo "===========change source ==========="
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+echo "add this"
+echo "deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib
+deb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib"
+echo "to /etc/apt/sources.list"
 
 echo "=========installing zsh-a beautiful terminal=========="
 sudo apt install zsh

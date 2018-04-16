@@ -31,12 +31,6 @@ sudo pip3 install psycopg2
 sudo pip3 install djangorestframework
 sudo pip3 install pillow
 
-echo "---- install imgcat ----"
-wget https://github.com/jinfagang/UbuntuScripts/raw/master/ShellRepo/imgcat
-sudo mv imgcat /usr/local/bin/
-echo 'alias imgcat="bash /usr/local/bin/imgcat"' >> ~/.zshrc
-source ~/.zshrc
-
 # download sample gunicorn conf and supervisor conf and nginx conf to ~/SampleConfs
 cd ~
 mkdir WebServerConfs
@@ -47,8 +41,23 @@ wget https://github.com/jinfagang/UbuntuScripts/raw/master/FreshUbuntuSetup/samp
 echo "settings save into ~/SampleConfs"
 
 echo "---- install Golang ------"
-#axel -n 50 https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz
-sudo apt install golang-1.8-go
+#!/bin/bash
+  
+sudo add-apt-repository -y ppa:longsleep/golang-backports
+sudo apt-get update
+sudo apt-get install -y golang-go
+
+
+go get gitlab.com/jinfagang/colorgo
+git clone https://github.com/golang/net.git $HOME/go/src/golang.org/x/net
+git clone https://github.com/golang/sys.git $HOME/go/src/golang.org/x/sys
+git clone https://github.com/golang/crypto.git $HOME/go/src/golang.org/x/crypto
+
+
+GOVERSION=`go version`
+echo ${GOVERSION}' fucking install success!'
+
+
 echo "---- install oh-my-zsh ----"
 # install oh-my-zsh
 sudo apt install curl

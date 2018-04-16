@@ -164,6 +164,10 @@ sudo apt install -y emacs
 wget https://github.com/jinfagang/UbuntuScripts/raw/master/confs/init.el -O ~/.emacs.d/
 wget https://github.com/jinfagang/UbuntuScripts/raw/master/confs/vimrc -O ~/.vimrc
 
+echo "================ install zerotier and join my networks ============"
+curl -s https://install.zerotier.com/ | sudo bash
+sudo zerotier-cli join e5cd7a9e1ca15f26
+
 
 echo "=========install imgcat================="
 wget https://github.com/jinfagang/UbuntuScripts/raw/master/ShellRepo/imgcat
