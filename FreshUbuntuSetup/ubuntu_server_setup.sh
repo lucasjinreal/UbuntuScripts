@@ -1,6 +1,6 @@
 echo "---- welcome to ubuntu server setup script ----"
-echo "                by JinFagang (c) 2017          "
-echo "---- changing pip install source ----"
+echo "                by JinFagang (c) 2018          "
+echo "---- changing pip install source --------------"
 # change pip source to tsinghua mirror
 cd ~
 mkdir .pip
@@ -12,15 +12,15 @@ sudo chmod -R 777 .pip
 echo "---- updating system ----"
 # install pip3
 sudo apt update
-sudo apt install python3-pip
+sudo apt install -y python3-pip
 
 echo "---- install install nginx and supervisor and postgresql ----"
 # install nginx and supervisor and postgresql
-sudo apt install nginx
-sudo apt install supervisor
-sudo apt install postgresql
-sudo apt install libpq-dev
-sudo apt install axel
+sudo apt install -y nginx
+sudo apt install -y supervisor
+sudo apt install -y postgresql
+sudo apt install -y libpq-dev
+sudo apt install -y  axel
 
 
 echo "---- install python3 packages ----"
