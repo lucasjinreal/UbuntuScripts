@@ -1,0 +1,15 @@
+server {
+	
+
+	listen 80;
+	listen [::]:80;
+
+	server_name fd.luoli-luoli.com;
+
+	charset utf-8,gbk;
+
+	root /root/Deploy/fairydiary-page/;
+	index index.html;
+
+
+}
