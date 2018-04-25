@@ -184,8 +184,10 @@ wget https://github.com/anmoljagetia/Flatabulous/releases/download/16.04.1/Flata
 sudo dpkg -i Flatabulous-Theme.deb
 
 
-
-
+echo "================ install z, your know z??? ===================="
+git clone https://github.com/rupa/z/raw/master/z.sh ~/
+echo ". /$HOME/z.sh" >> ~/.zshrc
+echo "OK! Your z setup finished."
 
 
 echo "All Done! Congratulations! Enjoy your Ubuntu!"
