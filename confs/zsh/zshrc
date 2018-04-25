@@ -2,19 +2,14 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/jintian/.oh-my-zsh
+export ZSH=/Users/jintian/.oh-my-zsh
+
+export TF_CPP_MIN_LOG_LEVEL=2
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -58,9 +53,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-)
+# plugins=(git autojump)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -92,9 +85,50 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+export PATH=$PATH:/usr/local/mysql/bin
+
+alias cloud-ruixun="ssh root@47.106.162.124"
+
+alias cloud-furong="ssh jinfagang@39.108.130.161"
+alias cloud-139="ssh ubuntu@139.199.158.201"
+alias cloud-119="ssh ubuntu@119.29.67.126"
+alias cloud-ali="ssh root@112.74.76.245"
+alias pool="cd /Volumes/Disk2/CodeSpace/Pool"
+
+alias cloud-daige="ssh -Y jintian@192.168.191.205"
+alias cloud-home="ssh -Y jintian@192.168.191.1"
+alias cloud-nlp="ssh -Y nlp@192.168.191.234"
+alias blog="cd /Volumes/xs/docs/blogs"
+alias work="cd /Volumes/xs/lans"
 
 
-alias reminder='cd /media/jintian/sg/docs/reminder'
-alias work='cd /media/jintian/sg/lans'
+alias typora="open -a typora"
+alias dl="cd /Volumes/Disk2/SafariDownloads/"
+#alias blog="cd /Volumes/Disk2/"
+alias psql-start="pg_ctl -D /usr/local/var/postgres -l logfile start"
 
+
+alias go=colorgo
+export PYTHONPATH=$PYTHONPATH:/usr/local/bin/python3.6
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
+alias netac="cd /Volumes/xs/lans"
+alias work2="cd /Volumes/Netac/lans"
+
+alias amazon="ssh -i "~/Desktop/TestOnAWSKey.pem" ubuntu@ec2-34-229-82-205.compute-1.amazonaws.com"
+
+alias term="open -a Terminal.app"
+export ANDROID_DAILY_OVERRIDE="f45e5d17ca3a0975c45e7dc90a57fc060946b744"
+export PATH="/usr/local/sbin:$PATH"
+
+alias book="cd /Volumes/xs/Documents/Books"
+alias cloud-sia="ssh root@106.14.174.108"
+
+export LANG=en_US.UTF-8
+alias reminder="cd /Volumes/xs/docs/reminder&& typora ."
+
+. /$HOME/z.sh
 
