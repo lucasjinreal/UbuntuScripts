@@ -185,8 +185,9 @@ sudo dpkg -i Flatabulous-Theme.deb
 
 
 echo "================ install z, your know z??? ===================="
-git clone https://github.com/rupa/z/raw/master/z.sh ~/
-echo ". /$HOME/z.sh" >> ~/.zshrc
+wget https://github.com/rupa/z/raw/master/z.sh ~/
+echo ". ~/z.sh" >> ~/.zshrc
+source ~/.zshrc
 echo "OK! Your z setup finished."
 
 
