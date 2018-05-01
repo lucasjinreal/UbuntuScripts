@@ -1,15 +1,4 @@
 #!/bin/bash
-echo "=========installing Chinese input source=========="
-sudo add-apt-repository ppa:fcitx-team/nightly
-sudo apt update
-sudo apt install fcitx
-sudo apt -f install
-sudo apt install fcitx-config-gtk
-sudo apt install im-switch
-echo "=========installing googlepinyin input method=========="
-sudo apt install fcitx-googlepinyin
-
-
 # change pip source to tsinghua mirror
 cd ~
 mkdir .pip
