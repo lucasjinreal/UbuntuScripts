@@ -49,6 +49,10 @@ sudo apt install -y unity-tweak-tool
 # install plank
 sudo apt install -y  plank
 
+echo "--- install some pre-requirements"
+sudo apt-get install -y libcanberra-gtk-module  
+sudo apt install -y libgtk2.0-dev
+
 echo "============== setup more beautiful icons ============"
 sudo add-apt-repository -y ppa:noobslab/icons
 sudo apt-get update
