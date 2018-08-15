@@ -62,15 +62,21 @@ sudo add-apt-repository -y ppa:noobslab/icons
 sudo apt-get update
 sudo apt-get install -y ultra-flat-icons-orange
 
-sudo add-apt-repository -y ppa:noobslab/icons
 sudo apt-get update
 sudo apt-get install -y ultra-flat-icons-green
 
 sudo add-apt-repository -y ppa:noobslab/themes
-sudo add-apt-repository -y ppa:noobslab/icons
 sudo apt-get  update
 sudo apt-get install -y arc-flatabulous-theme
 sudo apt-get install -y ultra-flat-icons
+
+sudo apt-get install -y google-chrome-stable
+sudo add-apt-repository -y ppa:dyatlov-igor/sierra-theme
+sudo apt update
+sudo apt install -y sierra-gtk-theme
+sudo apt install -y unity-tweak-tool
+sudo apt install -y python3-tk
+
 
 ## nemo file explorer
 sudo add-apt-repository -y ppa:webupd8team/nemo
