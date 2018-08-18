@@ -131,9 +131,9 @@ sudo apt update; sudo apt install -y oracle-java8-installer
 
 echo "=========== install typora ============="
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE
-sudo add-apt-repository 'deb http://typora.io linux/'
+sudo add-apt-repository -y 'deb http://typora.io linux/'
 sudo apt-get update
-sudo apt-get install typora
+sudo apt-get install -y typora
 
 
 echo "======== install enssential libs ========="
