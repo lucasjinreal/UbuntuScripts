@@ -148,9 +148,10 @@ sudo apt install -y ffmpeg
 sudo apt install -y exfat-utils
 
 echo "============ update cmake to a high level 3.9 ========="
-wget https://cmake.org/files/v3.9/cmake-3.9.0.tar.gz
-tar -xvf cmake-3.9.0.tar.gz
-cd cmake-3.9.0
+# wget https://cmake.org/files/v3.9/cmake-3.9.0.tar.gz
+wget https://cmake.org/files/v3.12/cmake-3.12.0.tar.gz
+tar -xvf cmake-3.12.0.tar.gz
+cd cmake-3.12.0
 sudo apt install -y curl
 sudo apt install -y libcurl4-gnutls-dev
 sudo apt install -y libcurl4-openssl-dev
