@@ -11,6 +11,11 @@ sudo apt install -y fcitx-googlepinyin
 sudo apt install -y curl
 
 
+echo "++++++++ Installing translate-terminal ++++++++++++++"
+sudo apt install -y npm
+sudo npm install terminal-translate -g
+
+
 echo "=========installing google-chrome-stable=========="
 # some times this line con not get
 sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/
