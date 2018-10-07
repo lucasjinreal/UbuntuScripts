@@ -1,0 +1,74 @@
+server {
+	
+
+	listen 80;
+	listen [::]:80;
+
+	server_name luoli-luoli.com www.luoli-luoli.com 112.74.76.245 loliloli.pro www.loliloli.pro;
+
+	charset utf-8,gbk;
+
+	#root /var/www/jintianisme-top;
+	#index index.html;
+
+	# let nginx parse url, and let all this urls
+	# let gunicorn sovle them!
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		proxy_pass http://127.0.0.1:8000;
+		try_files $uri $uri/ =404;
+		client_max_body_size    1000m;
+	}
+
+	location /edit_success {
+                proxy_pass http://127.0.0.1:8000;
+        }
+	location /home {
+                proxy_pass http://127.0.0.1:8000;
+        }
+	location /talk {
+		proxy_pass http://127.0.0.1:8000;
+	}
+	location /edit_talk {
+                proxy_pass http://127.0.0.1:8000;
+        }
+	location /about {
+                proxy_pass http://127.0.0.1:8000;
+        }
+	location /login {
+                proxy_pass http://127.0.0.1:8000;
+        }
+
+	location /admin {
+		proxy_pass http://127.0.0.1:8000;
+	}
+	location /api{
+		proxy_pass http://127.0.0.1:8000;
+	}
+       
+        location /raccoon{
+                proxy_pass http://127.0.0.1:8000;
+        }
+       
+        location /sia{
+                proxy_pass http://127.0.0.1:8000;
+        }
+	location /chat{
+		proxy_pass http://127.0.0.1:8000;
+	}
+      	location /bojue {
+                proxy_pass http://127.0.0.1:8000;
+        }
+
+	location /download/ {
+		alias /root/Deploy/luoliluoli-server/download/;
+	}
+	location /static/ {
+		autoindex on;
+		alias /root/Deploy/luoliluoli-server/static/;
+    }
+	location /media/ {
+		alias /root/Deploy/luoliluoli-server/media/;
+	}
+}
