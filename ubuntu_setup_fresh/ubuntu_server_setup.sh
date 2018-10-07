@@ -25,11 +25,19 @@ sudo apt install -y  axel
 
 echo "---- install python3 packages ----"
 # install python3 packages
-sudo pip3 install django
 sudo pip3 install gunicore
 sudo pip3 install psycopg2
 sudo pip3 install djangorestframework
 sudo pip3 install pillow
+sudo pip3 install PyJWT==1.6.1
+sudo pip3 install psycopg2-binary
+sudo pip3 install langdetect
+sudo pip3 install pytz==2018.3
+sudo pip3 install mistune==0.8.3
+sudo pip3 install qiniu==7.2.0
+sudo pip3 install requests==2.18.4
+sudo pip3 install Django==1.11.7
+sudo pip3 install numpy==1.13.3
 
 # download sample gunicorn conf and supervisor conf and nginx conf to ~/SampleConfs
 cd ~
