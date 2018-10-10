@@ -21,11 +21,11 @@ sudo apt install -y supervisor
 sudo apt install -y postgresql
 sudo apt install -y libpq-dev
 sudo apt install -y  axel
-
+sudo apt install -y git
 
 echo "---- install python3 packages ----"
 # install python3 packages
-sudo pip3 install gunicore
+sudo pip3 install gunicorn
 sudo pip3 install psycopg2
 sudo pip3 install djangorestframework
 sudo pip3 install pillow
@@ -38,6 +38,8 @@ sudo pip3 install qiniu==7.2.0
 sudo pip3 install requests==2.18.4
 sudo pip3 install Django==1.11.7
 sudo pip3 install numpy==1.13.3
+sudo pip3 install django-cors-headers
+sudo pip3 install imgkit
 
 # download sample gunicorn conf and supervisor conf and nginx conf to ~/SampleConfs
 cd ~
@@ -50,11 +52,6 @@ echo "settings save into ~/SampleConfs"
 
 echo "---- install Golang ------"
 #!/bin/bash
-  
-sudo add-apt-repository -y ppa:longsleep/golang-backports
-sudo apt-get update
-sudo apt-get install -y golang-go
-
 
 go get gitlab.com/jinfagang/colorgo
 git clone https://github.com/golang/net.git $HOME/go/src/golang.org/x/net
@@ -68,7 +65,7 @@ echo ${GOVERSION}' fucking install success!'
 
 echo "---- install oh-my-zsh ----"
 # install oh-my-zsh
-sudo apt install curl
-sudo apt install wget
-sudo apt install zsh
+sudo apt install -y curl
+sudo apt install -y wget
+sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
