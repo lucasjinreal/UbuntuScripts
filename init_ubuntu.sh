@@ -177,6 +177,10 @@ echo "======== install sublime text3 =================="
  sudo apt update
  sudo apt-get install -y sublime-text-installer
 
+ sudo add-apt-repository -y ppa:peek-developers/stable
+sudo apt update
+sudo apt install -y peek
+
 echo "=========installing zsh-a beautiful terminal=========="
 sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
