@@ -27,8 +27,12 @@ sudo apt-get install -y g++ freeglut3-dev build-essential libx11-dev libxmu-dev 
 sudo apt install -y gcc-6
 sudo apt install -y g++-6
 
+# change default to gcc6
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
+
+
 # downoad one of the "runfile (local)" installation packages from cuda toolkit archive 
-wget https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/cuda_9.0.176_384.81_linux-run
+wget https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/cuda_9.0.176_384.81_linux-run cuda_9.0.176_384.81_linux.run
 
 # make the download file executable
 chmod +x cuda_9.0.176_384.81_linux.run 
