@@ -64,6 +64,8 @@ sudo apt install -y  plank
 echo "--- install some pre-requirements"
 sudo apt-get install -y libcanberra-gtk-module  
 sudo apt install -y libgtk2.0-dev
+# this for openGL when you need VTK and open contrib modules
+sudo apt-get install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev
 
 echo "============== setup more beautiful icons ============"
 sudo add-apt-repository -y ppa:noobslab/icons
