@@ -130,5 +130,10 @@ alias cloud-sia="ssh root@106.14.174.108"
 export LANG=en_US.UTF-8
 alias reminder="cd /Volumes/xs/docs/reminder&& typora ."
 
+
+
+# both for macOS and Ubuntu
+export CMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH:/usr/local/include/eigen3/cmake"
+
 . /$HOME/z.sh
 
