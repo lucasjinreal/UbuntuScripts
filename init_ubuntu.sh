@@ -161,6 +161,11 @@ sudo pip3 install matplotlib
 sudo apt install -y ffmpeg
 sudo apt install -y exfat-utils
 
+sudo apt install -y libnodejs-dev
+sudo apt install -y npm
+sudo apt install -y terminal-translate
+
+
 echo "============ update cmake to a high level 3.9 ========="
 # wget https://cmake.org/files/v3.9/cmake-3.9.0.tar.gz
 wget https://cmake.org/files/v3.12/cmake-3.12.0.tar.gz
