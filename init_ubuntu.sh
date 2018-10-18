@@ -10,6 +10,9 @@ echo "=========installing googlepinyin input method=========="
 sudo apt install -y fcitx-googlepinyin
 sudo apt install -y curl
 
+echo "========== !!!!!!!!!!!!!!!! Installing Deep Learning Depencies ======="
+sudo apt install -y libatalas-base-dev
+
 
 echo "++++++++ Installing translate-terminal ++++++++++++++"
 sudo apt install -y npm
