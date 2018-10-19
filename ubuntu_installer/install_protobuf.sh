@@ -9,6 +9,8 @@ cd protobuf
 make -j32
 make check
 sudo make install
+sudo ldconfig
+pkg-config --modversion protobuf
 
 # have to manually set protoc version
 # otherwise it will always generate the newest version
