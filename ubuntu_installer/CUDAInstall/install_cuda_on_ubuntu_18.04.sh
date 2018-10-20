@@ -31,6 +31,11 @@ sudo apt install -y g++-6
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
 
 
+# set up symlinks for gcc/g++
+sudo ln -s /usr/bin/gcc-6 /usr/local/cuda/bin/gcc
+sudo ln -s /usr/bin/g++-6 /usr/local/cuda/bin/g++
+
+
 # downoad one of the "runfile (local)" installation packages from cuda toolkit archive 
 wget https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/cuda_9.0.176_384.81_linux-run cuda_9.0.176_384.81_linux.run
 
@@ -43,9 +48,6 @@ sudo ./cuda_9.0.176_384.81_linux.run --override
 # Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 384.81? n
 # Install the CUDA 9.0 Toolkit? y
 
-# set up symlinks for gcc/g++
-sudo ln -s /usr/bin/gcc-6 /usr/local/cuda/bin/gcc
-sudo ln -s /usr/bin/g++-6 /usr/local/cuda/bin/g++
 
 # setup your paths
 echo 'export PATH=/usr/local/cuda-9.0/bin:$PATH' >> ~/.bashrc
