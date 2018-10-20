@@ -13,6 +13,7 @@ lspci | grep -i nvidia
 
 ### gcc compiler is required for development using the cuda toolkit. to verify the version of gcc install enter
 gcc --version
+echo "seems gcc not found, that's great, we will install gcc6 now."
 
 # first get the PPA repository driver
 sudo add-apt-repository ppa:graphics-drivers/ppa
