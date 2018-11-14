@@ -95,12 +95,7 @@ sudo apt install -y unity-tweak-tool
 sudo apt install -y python3-tk
 
 
-## nemo file explorer
-sudo add-apt-repository -y ppa:webupd8team/nemo
-sudo apt-get update
-sudo apt-get install -y  nemo nemo-fileroller
-gsettings set org.gnome.desktop.background show-desktop-icons false
-xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+
 
 # install numix theme
 sudo add-apt-repository -y ppa:numix/ppa  
