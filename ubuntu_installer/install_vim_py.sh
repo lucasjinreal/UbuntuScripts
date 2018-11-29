@@ -20,6 +20,10 @@ make
 sudo make install
 sudo ln -s /usr/local/bin/vim /usr/bin/vim
 
+echo "Install Vundle for vim............."
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+
 log() {
     echo "$(date +'%Y-%m-%dT%H:%M:%S%z') INFO $0 | $@"
 }
@@ -35,4 +39,8 @@ cd YouCompleteMe
 git submodule update --init --recursive
 ./install.py --clang-completer
 log "Success to install YouCompleteMe"
+
+echo "Fetching my .vimrc from github............"
+wget https://github.com/jinfagang/UbuntuScripts/raw/master/confs/vim/vimrc -O ~/.vimrc
+echo "My vim fetched and done."
 exit 0
