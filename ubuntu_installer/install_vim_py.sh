@@ -19,3 +19,20 @@ cd ..
 make
 sudo make install
 sudo ln -s /usr/local/bin/vim /usr/bin/vim
+
+log() {
+    echo "$(date +'%Y-%m-%dT%H:%M:%S%z') INFO $0 | $@"
+}
+err() {
+    echo "$(date +'%Y-%m-%dT%H:%M:%S%z') ERROR $0 | $@" >&2
+}
+
+log "Start to install YouCompleteMe"
+cd ~/.vim/bundle/
+rm -rf YouCompleteMe
+git clone https://github.com/Valloric/YouCompleteMe.git
+cd YouCompleteMe
+git submodule update --init --recursive
+./install.py --clang-completer
+log "Success to install YouCompleteMe"
+exit 0
