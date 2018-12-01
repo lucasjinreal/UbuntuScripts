@@ -1,6 +1,6 @@
 sudo apt install -y python-dev python3-dev libperl-dev
 sudo apt-get remove --purge vim vim-runtime vim-gnome vim-tiny vim-gui-common
-sudo apt-get install -y checkinstall libncurses5-dev
+sudo apt-get install -y checkinstall libncurses5-dev ctags
 sudo rm -rf /usr/local/share/vim /usr/bin/vim
 cd /tmp && git clone https://github.com/vim/vim
 cd vim/src
