@@ -16,6 +16,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 " Powerline
 Plugin 'Lokaltog/vim-powerline'
+
+" Plugin 'scrooloose/nerdtree'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -59,6 +61,14 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "       Basic Configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {}<ESC>i
+" inoremap < <><ESC>i
+inoremap ' ''<ESC>i
+inoremap " ""<ESC>i
+
 set history=500 " Sets how many lines of history VIM has to remember
 syntax on " Enable filetype plugins
 " Colorcolumn
@@ -173,6 +183,7 @@ let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
+map <C-f> :NERDTree<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "       doxygen
 " Dox DoxAuthor DoxLic DoxUndoc
@@ -185,7 +196,7 @@ let g:DoxygenToolkit_licenseTag="@License I don't care"
 let g:DoxygenToolkit_commentType = "C++"
 
 
-let g:ycm_global_ycm_extra_conf='/home/macduan/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='/home/jintain/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 let g:ycm_collect_identifiers_from_tag_files=1
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_confirm_extra_conf=0
