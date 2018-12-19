@@ -163,9 +163,11 @@ sudo apt install -y libnodejs-dev
 sudo apt install -y npm
 sudo apt install -y terminal-translate
 
+echo "================ install zerotier and join my networks ============"
+curl -s https://install.zerotier.com/ | sudo bash
+sudo zerotier-cli join e5cd7a9e1ca15f26
 
 echo "============ update cmake to a high level 3.9 ========="
-# wget https://cmake.org/files/v3.9/cmake-3.9.0.tar.gz
 wget https://cmake.org/files/v3.12/cmake-3.12.0.tar.gz
 tar -xvf cmake-3.12.0.tar.gz
 cd cmake-3.12.0
@@ -178,11 +180,11 @@ sudo make install
 
 
 echo "======== install sublime text3 =================="
- sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
- sudo apt update
- sudo apt-get install -y sublime-text-installer
+sudo add-apt-repository ppa:wereturtle/ppa
+sudo apt-get update
+sudo apt-get install ghostwriter
 
- sudo add-apt-repository -y ppa:peek-developers/stable
+sudo add-apt-repository -y ppa:peek-developers/stable
 sudo apt update
 sudo apt install -y peek
 
@@ -196,9 +198,7 @@ sudo apt install -y emacs
 wget https://github.com/jinfagang/UbuntuScripts/raw/master/confs/init.el -O ~/.emacs.d/
 wget https://github.com/jinfagang/UbuntuScripts/raw/master/confs/vimrc -O ~/.vimrc
 
-echo "================ install zerotier and join my networks ============"
-curl -s https://install.zerotier.com/ | sudo bash
-sudo zerotier-cli join e5cd7a9e1ca15f26
+
 
 
 echo "=========install imgcat================="
