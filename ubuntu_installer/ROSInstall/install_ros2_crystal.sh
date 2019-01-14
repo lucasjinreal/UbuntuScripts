@@ -6,6 +6,9 @@ sudo sh -c 'echo "deb [arch=amd64,arm64] http://packages.ros.org/ros2/ubuntu `ls
 sudo apt update
 sudo apt install ros-crystal-desktop
 sudo apt install ros-crystal-ros-base
-sudo apt install python3-argcomplete
+sudo apt install python3-argcomp
+sudo apt install ros-crystal-rmw-opensplice-cpplete
+sudo apt install ros-crystal-rmw-connext-cpp
+
 
 echo 'Congratulations! you are installed ros2 crystal!'
