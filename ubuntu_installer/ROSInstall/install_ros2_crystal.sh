@@ -10,5 +10,5 @@ sudo apt install python3-argcomp
 sudo apt install ros-crystal-rmw-opensplice-cpplete
 sudo apt install ros-crystal-rmw-connext-cpp
 
-
+sudo apt install python3-colcon-common-extensions
 echo 'Congratulations! you are installed ros2 crystal!'
