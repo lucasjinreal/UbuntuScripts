@@ -19,6 +19,12 @@ sudo apt install -y npm
 sudo npm install terminal-translate -g
 
 
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+sudo apt-get install -y git-lfs
+git lfs install
+
+
+
 echo "=========installing google-chrome-stable=========="
 # some times this line con not get
 sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/
