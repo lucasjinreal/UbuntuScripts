@@ -12,7 +12,7 @@ sudo apt install -y curl
 
 echo "========== !!!!!!!!!!!!!!!! Installing Deep Learning Depencies ======="
 sudo apt install -y libatalas-base-dev
-
+sudo apt install -y fonts-noto-color-emoji
 
 echo "++++++++ Installing translate-terminal ++++++++++++++"
 sudo apt install -y npm
