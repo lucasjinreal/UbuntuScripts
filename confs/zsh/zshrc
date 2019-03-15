@@ -2,20 +2,28 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/jintian/.oh-my-zsh
+  export ZSH="/home/jintain/.oh-my-zsh"
 
-export TF_CPP_MIN_LOG_LEVEL=2
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+#ZSH_THEME="agnoster"
+#ZSH_THEME="oxide"
+ZSH_THEME="geoffgarside"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
@@ -43,17 +51,25 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# plugins=(git autojump)
+plugins=(
+  git
+  autojump
+)
+. /usr/share/autojump/autojump.sh
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,55 +101,63 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH=$PATH:/usr/local/mysql/bin
+#
 
-alias cloud-ruixun="ssh root@47.106.162.124"
+export PATH=/usr/local/cuda-9.0/bin:$PATH:/usr/local/go/bin
+export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:$LD_LIBRARY_PATH
 
-alias cloud-furong="ssh jinfagang@39.108.130.161"
-alias cloud-139="ssh ubuntu@139.199.158.201"
-alias cloud-119="ssh ubuntu@119.29.67.126"
-alias cloud-ali="ssh root@112.74.76.245"
-alias pool="cd /Volumes/Disk2/CodeSpace/Pool"
+export CMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH:/usr/local/include/eigen3/cmake:/media/jintain/sg/ai/career/robot/ctirobot/learn/torchcpp/libtorch/share/cmake"
 
-alias cloud-daige="ssh -Y jintian@192.168.191.205"
-alias cloud-home="ssh -Y jintian@192.168.191.1"
-alias cloud-nlp="ssh -Y nlp@192.168.191.234"
-alias blog="cd /Volumes/xs/docs/blogs"
-alias work="cd /Volumes/xs/lans"
-
-
-alias typora="open -a typora"
-alias dl="cd /Volumes/Disk2/SafariDownloads/"
-#alias blog="cd /Volumes/Disk2/"
-alias psql-start="pg_ctl -D /usr/local/var/postgres -l logfile start"
+alias work="cd /media/jintain/sg"
+alias work2="cd /media/jintain/sg/ai/career/robot/ctirobot"
+alias work3="cd /media/jintain/wd"
+alias work4="cd /media/jintain/wd/ai/career/robot/ctirobot"
+#source /opt/ros/melodic/setup.zsh
+#alias rm='rm -i'
+alias todo="gedit ~/.todo.txt"
 
 
-alias go=colorgo
-export PYTHONPATH=$PYTHONPATH:/usr/local/bin/python3.6
+CAFFE_ROOT="/home/jintain/caffe/python"
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export LIBTORCH_ROOT="/media/jintain/sg/ai/career/robot/ctirobot/fruits/3d_det/second_pytorch/spconv/libtorch"
 
-export GOPATH="$HOME/go"
-export PATH="$GOPATH/bin:$PATH"
-alias netac="cd /Volumes/xs/lans"
-alias work2="cd /Volumes/Netac/lans"
+alias clion=/opt/clion-2018.3.3/bin/clion.sh
+export PYTHONPATH=$PYTHONPATH:/media/jintain/sg/ai/career/robot/ctirobot/milestones/avod_ssd/wavedata/:/media/jintain/sg/ai/career/robot/ctirobot/milestones/second_pytorch:${CAFFE_ROOT}
 
-alias amazon="ssh -i "~/Desktop/TestOnAWSKey.pem" ubuntu@ec2-34-229-82-205.compute-1.amazonaws.com"
 
-alias term="open -a Terminal.app"
-export ANDROID_DAILY_OVERRIDE="f45e5d17ca3a0975c45e7dc90a57fc060946b744"
-export PATH="/usr/local/sbin:$PATH"
+alias kiss="source /opt/ros/melodic/setup.zsh"
+alias kiss2="source /opt/ros/crystal/setup.zsh"
 
-alias book="cd /Volumes/xs/Documents/Books"
-alias cloud-sia="ssh root@106.14.174.108"
+alias initreal="source /media/jintain/wd/ros/fusion/catkin_ws_realsense/devel/setup.zsh"
+#export PATH="/home/jintain/miniconda3/bin:$PATH"
 
-export LANG=en_US.UTF-8
-alias reminder="cd /Volumes/xs/docs/reminder&& typora ."
+export APOLLO_HOME=/media/jintain/sg/ai/career/robot/ctirobot/vendor/apollo
+
+alias cloud-ss='ssh root@47.106.163.216'
+export NUMBAPRO_CUDA_DRIVER=/usr/lib/x86_64-linux-gnu/libcuda.so
+export NUMBAPRO_NVVM=/usr/local/cuda/nvvm/lib64/libnvvm.so
+export NUMBAPRO_LIBDEVICE=/usr/local/cuda/nvvm/libdevice
 
 
 
-# both for macOS and Ubuntu
-export CMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH:/usr/local/include/eigen3/cmake"
+export CPATH=$CPATH:/usr/local/lib/python3.6/dist-packages/tensorflow/include/external/local_config_cuda/cuda/cuda/
 
-. /$HOME/z.sh
 
+alias nu="nautilus ."
+
+export TURTLEBOT3_MODEL=burger
+export CITYSCAPES_DATASET=/media/jintain/sg/permanent/datasets/Cityscapes
+
+
+alias goland="/opt/GoLand-2018.3.2/bin/goland.sh"
+
+alias tryit="cd /media/jintain/wd/weapons/tryit"
+#export CPLUS_INCLUDE_PATH="/media/jintain/sg/ai/products/yolov3_mobilenet_caffe/include":/usr/local/cuda/include
+
+PATH="/home/jintain/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/jintain/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/jintain/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/jintain/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/jintain/perl5"; export PERL_MM_OPT;
+
+eval $(thefuck --alias)
