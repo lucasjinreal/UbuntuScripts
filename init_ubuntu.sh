@@ -188,7 +188,7 @@ sudo make install
 echo "======== install sublime text3 =================="
 sudo add-apt-repository ppa:wereturtle/ppa
 sudo apt-get update
-sudo apt-get install ghostwriter
+sudo apt-get install -y ghostwriter
 
 sudo add-apt-repository -y ppa:peek-developers/stable
 sudo apt update
