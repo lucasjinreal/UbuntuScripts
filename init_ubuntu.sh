@@ -24,17 +24,9 @@ sudo apt-get install -y git-lfs
 git lfs install
 
 
-
-echo "=========installing google-chrome-stable=========="
-# some times this line con not get
-sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/
-wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -
-sudo apt update
-sudo apt install -y google-chrome-stable
-
 echo "=========installing ssh and git=========="
 sudo apt update
-sudo apt install -y openssh-server
+sudo apt install -y openssh-server openssh-client
 sudo apt install -y git
 sudo apt install -y curl
 sudo apt install -y axel

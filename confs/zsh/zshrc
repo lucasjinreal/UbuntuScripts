@@ -103,15 +103,14 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-export PATH=/usr/local/cuda-9.0/bin:$PATH:/usr/local/go/bin
-export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:$LD_LIBRARY_PATH
+export PATH=/usr/local/cuda/bin:$PATH:/usr/local/go/bin
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
-export CMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH:/usr/local/include/eigen3/cmake:/media/jintain/sg/ai/career/robot/ctirobot/learn/torchcpp/libtorch/share/cmake"
+export CMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH:/usr/local/include/eigen3/cmake"
 
 alias work="cd /media/jintian/data"
 alias work2="cd /media/jintian/sg/ai/career/robot/ctirobot"
 alias work3="cd /media/jintian/wd"
-alias work4="cd /media/jintain/wd/ai/career/robot/ctirobot"
 #source /opt/ros/melodic/setup.zsh
 #alias rm='rm -i'
 
