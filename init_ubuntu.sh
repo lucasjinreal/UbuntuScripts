@@ -13,6 +13,14 @@ sudo apt install -y curl
 echo "========== !!!!!!!!!!!!!!!! Installing Deep Learning Depencies ======="
 sudo apt install -y libatalas-base-dev
 sudo apt install -y fonts-noto-color-emoji
+sudo apt install -y ffmpeg
+sudo apt install -y libgoogle-glog-dev
+sudo apt install -y libatlas-dev libatlas-base-dev
+sudo apt install -y libboost1.58-all-dev libhdf5-dev
+sudo apt install -y autoconf
+sudo apt install -y liblmdb-dev
+sudo apt install -y python3-pip
+
 
 echo "++++++++ Installing translate-terminal ++++++++++++++"
 sudo apt install -y npm
