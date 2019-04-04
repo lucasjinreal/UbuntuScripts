@@ -9,6 +9,7 @@ sudo apt install -y  im-switch
 echo "=========installing googlepinyin input method=========="
 sudo apt install -y fcitx-googlepinyin
 sudo apt install -y curl
+sudo apt-get install -y fonts-powerline
 
 echo "========== !!!!!!!!!!!!!!!! Installing Deep Learning Depencies ======="
 sudo apt install -y libatalas-base-dev
