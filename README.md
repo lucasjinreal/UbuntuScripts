@@ -1,4 +1,12 @@
-# Ubuntu and All Scripts WareHouse
+# Ubuntu Scripts
+
+When you installed a new machine, you need to build all enviroment you need, but this repo will save your life, what you need to do is simply:
+
+```
+./install_ubuntu.sh
+```
+
+Then almost everything will be installed automatically, **especially for deep learning libs**.
 
 ## Various install commands
 
