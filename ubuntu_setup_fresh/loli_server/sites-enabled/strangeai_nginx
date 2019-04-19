@@ -1,0 +1,15 @@
+server {
+	
+
+	listen 80;
+	listen [::]:80;
+
+	server_name strangeai.pro www.strangeai.pro ai.loliloli.pro;
+
+	charset utf-8,gbk;
+
+	root /root/Deploy/Pages/strangeai_page/;
+	index index.html;
+
+
+}

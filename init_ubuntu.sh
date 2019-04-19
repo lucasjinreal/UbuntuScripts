@@ -9,23 +9,38 @@ sudo apt install -y  im-switch
 echo "=========installing googlepinyin input method=========="
 sudo apt install -y fcitx-googlepinyin
 sudo apt install -y curl
+sudo apt-get install -y fonts-powerline
 
+echo "========== !!!!!!!!!!!!!!!! Installing Deep Learning Depencies ======="
+sudo apt install -y libatalas-base-dev
+sudo apt install -y fonts-noto-color-emoji
+sudo apt install -y ffmpeg
+sudo apt install -y libgoogle-glog-dev
+sudo apt install -y libatlas-dev libatlas-base-dev
+sudo apt install -y libboost1.58-all-dev libhdf5-dev
+sudo apt install -y autoconf
+sudo apt install -y liblmdb-dev
+sudo apt install -y python3-pip
+
+sudo apt-get install --assume-yes build-essential cmake cmake-gui checkinstall git libgtk2.0-dev pkg-config python-dev libboost-all-dev  libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff5-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev libxine2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev libtbb-dev libqt4-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev x264 v4l-utils unzip ffmpeg libgtk-3-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev qtbase5-dev yasm libblas-dev libopenblas-dev
+
+echo "----- there tools you can not really miss them -------"
+sudo apt install -y mc
+sudo apt install -y ncdu
 
 echo "++++++++ Installing translate-terminal ++++++++++++++"
 sudo apt install -y npm
 sudo npm install terminal-translate -g
 
 
-echo "=========installing google-chrome-stable=========="
-# some times this line con not get
-sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/
-wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -
-sudo apt update
-sudo apt install -y google-chrome-stable
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+sudo apt-get install -y git-lfs
+git lfs install
+
 
 echo "=========installing ssh and git=========="
 sudo apt update
-sudo apt install -y openssh-server
+sudo apt install -y openssh-server openssh-client
 sudo apt install -y git
 sudo apt install -y curl
 sudo apt install -y axel
@@ -64,6 +79,8 @@ sudo apt install -y  plank
 echo "--- install some pre-requirements"
 sudo apt-get install -y libcanberra-gtk-module  
 sudo apt install -y libgtk2.0-dev
+# this for openGL when you need VTK and open contrib modules
+sudo apt-get install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev
 
 echo "============== setup more beautiful icons ============"
 sudo add-apt-repository -y ppa:noobslab/icons
@@ -90,12 +107,7 @@ sudo apt install -y unity-tweak-tool
 sudo apt install -y python3-tk
 
 
-## nemo file explorer
-sudo add-apt-repository -y ppa:webupd8team/nemo
-sudo apt-get update
-sudo apt-get install -y  nemo nemo-fileroller
-gsettings set org.gnome.desktop.background show-desktop-icons false
-xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+
 
 # install numix theme
 sudo add-apt-repository -y ppa:numix/ppa  
@@ -126,7 +138,7 @@ sudo pip2 install numpy
 
 echo "============ install my python packages =========="
 sudo pip3 install alfred-py
-
+sudo pip3 install cheat
 
 echo "================ install text editors (vim, emacs, kate etc.)==================="
 cd ~/Downloads
@@ -159,8 +171,15 @@ sudo pip3 install matplotlib
 sudo apt install -y ffmpeg
 sudo apt install -y exfat-utils
 
+sudo apt install -y libnodejs-dev
+sudo apt install -y npm
+sudo apt install -y terminal-translate
+
+echo "================ install zerotier and join my networks ============"
+curl -s https://install.zerotier.com/ | sudo bash
+sudo zerotier-cli join e5cd7a9e1ca15f26
+
 echo "============ update cmake to a high level 3.9 ========="
-# wget https://cmake.org/files/v3.9/cmake-3.9.0.tar.gz
 wget https://cmake.org/files/v3.12/cmake-3.12.0.tar.gz
 tar -xvf cmake-3.12.0.tar.gz
 cd cmake-3.12.0
@@ -173,9 +192,13 @@ sudo make install
 
 
 echo "======== install sublime text3 =================="
- sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
- sudo apt update
- sudo apt-get install -y sublime-text-installer
+sudo add-apt-repository ppa:wereturtle/ppa
+sudo apt-get update
+sudo apt-get install -y ghostwriter
+
+sudo add-apt-repository -y ppa:peek-developers/stable
+sudo apt update
+sudo apt install -y peek
 
 echo "=========installing zsh-a beautiful terminal=========="
 sudo apt install -y zsh
@@ -187,9 +210,7 @@ sudo apt install -y emacs
 wget https://github.com/jinfagang/UbuntuScripts/raw/master/confs/init.el -O ~/.emacs.d/
 wget https://github.com/jinfagang/UbuntuScripts/raw/master/confs/vimrc -O ~/.vimrc
 
-echo "================ install zerotier and join my networks ============"
-curl -s https://install.zerotier.com/ | sudo bash
-sudo zerotier-cli join e5cd7a9e1ca15f26
+
 
 
 echo "=========install imgcat================="
