@@ -1,0 +1,78 @@
+server {
+    listen 443;
+    ssl on;
+    ssl_certificate   cert/1527375594382.pem;
+    ssl_certificate_key  cert/1527375594382.key;
+    ssl_session_timeout 5m;
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_prefer_server_ciphers on;
+
+	server_name luoli-luoli.com www.luoli-luoli.com 112.74.76.245;
+
+	charset utf-8,gbk;
+
+	#root /var/www/jintianisme-top;
+	#index index.html;
+
+	# let nginx parse url, and let all this urls
+	# let gunicorn sovle them!
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		proxy_pass http://127.0.0.1:8000;
+		try_files $uri $uri/ =404;
+		client_max_body_size    1000m;
+	}
+
+	location /edit_success {
+                proxy_pass http://127.0.0.1:8000;
+        }
+	location /home {
+                proxy_pass http://127.0.0.1:8000;
+        }
+	location /talk {
+		proxy_pass http://127.0.0.1:8000;
+	}
+	location /edit_talk {
+                proxy_pass http://127.0.0.1:8000;
+        }
+	location /about {
+                proxy_pass http://127.0.0.1:8000;
+        }
+	location /login {
+                proxy_pass http://127.0.0.1:8000;
+        }
+
+	location /admin {
+		proxy_pass http://127.0.0.1:8000;
+	}
+	location /api{
+		proxy_pass http://127.0.0.1:8000;
+	}
+       
+        location /raccoon{
+                proxy_pass http://127.0.0.1:8000;
+        }
+       
+        location /sia{
+                proxy_pass http://127.0.0.1:8000;
+        }
+	location /chat{
+		proxy_pass http://127.0.0.1:8000;
+	}
+      	location /bojue {
+                proxy_pass http://127.0.0.1:8000;
+        }
+
+	location /download/ {
+		alias /root/Deploy/luoliluoli-server/download/;
+	}
+	location /static/ {
+		autoindex on;
+		alias /root/Deploy/luoliluoli-server/static/;
+    }
+	location /media/ {
+		alias /root/Deploy/luoliluoli-server/media/;
+	}
+}

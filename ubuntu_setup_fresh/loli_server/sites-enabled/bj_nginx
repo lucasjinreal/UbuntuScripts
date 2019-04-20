@@ -1,0 +1,15 @@
+server {
+	
+
+	listen 80;
+	listen [::]:80;
+
+	server_name fden.luoli-luoli.com bj.loliloli.pro;
+
+	charset utf-8,gbk;
+
+	root /root/Deploy/bestdeal-en/;
+	index index.html;
+
+
+}

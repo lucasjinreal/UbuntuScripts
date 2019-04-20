@@ -1,0 +1,37 @@
+server {
+	
+
+	listen 80;
+	listen [::]:80;
+
+	server_name 192.168.1.118;
+
+	charset utf-8;
+
+	root /var/www/jintianisme-top;
+	index index.html;
+
+	# let nginx parse url, and let all this urls
+	# let gunicorn sovle them!
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		proxy_pass http://127.0.0.1:8100;
+		try_files $uri $uri/ =404;
+	}
+
+	location /admin {
+		proxy_pass http://127.0.0.1:8100;
+	}
+	location /api{
+		proxy_pass http://127.0.0.1:8100;
+	}
+
+	location /static/ {
+		autoindex on;
+		alias /home/jfg/Documents/WebSpace/oumenglite/static/;
+    }
+	location /media/ {
+		alias /home/jfg/Documents/WebSpace/oumenglite/media/;
+	}
+}
