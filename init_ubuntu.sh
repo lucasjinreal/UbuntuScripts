@@ -140,12 +140,12 @@ echo "============ install my python packages =========="
 sudo pip3 install alfred-py
 sudo pip3 install cheat
 
-echo "================ install text editors (vim, emacs, kate etc.)==================="
-cd ~/Downloads
-wget http://mirrors.ustc.edu.cn/kde/unstable/kate/Kate-16.08-x86_64.AppImage
-sudo chmod -R 777 Kate-16.08-x86_64.AppImage
-sudo mv Kate-16.08-x86_64.AppImage /usr/bin/kate
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+#echo "================ install text editors (vim, emacs, kate etc.)==================="
+#cd ~/Downloads
+#wget http://mirrors.ustc.edu.cn/kde/unstable/kate/Kate-16.08-x86_64.AppImage
+#sudo chmod -R 777 Kate-16.08-x86_64.AppImage
+#sudo mv Kate-16.08-x86_64.AppImage /usr/bin/kate
+#git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 
 
@@ -192,7 +192,7 @@ sudo make install
 
 
 echo "======== install sublime text3 =================="
-sudo add-apt-repository ppa:wereturtle/ppa
+sudo add-apt-repository -y ppa:wereturtle/ppa
 sudo apt-get update
 sudo apt-get install -y ghostwriter
 
