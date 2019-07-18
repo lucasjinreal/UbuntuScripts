@@ -31,6 +31,10 @@ sudo apt install -y ncdu
 echo "++++++++ Installing translate-terminal ++++++++++++++"
 sudo apt install -y npm
 sudo npm install terminal-translate -g
+# need to update npm
+sudo npm install -g n
+sudo n stable
+# now it can work
 
 
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
