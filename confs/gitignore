@@ -134,3 +134,9 @@ dmypy.json
 .pyre/
 
 # End of https://www.gitignore.io/api/python
+bazel-bin/
+bazel-*/
+bazel-genfiles/
+bazel-testlogs/
+bazel-out/
+
