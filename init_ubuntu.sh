@@ -50,11 +50,11 @@ sudo apt install -y curl
 sudo apt install -y axel
 sudo apt install -y wget
 
-echo '============= installing sublime =============================='
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-sudo apt-get update
-sudo apt-get install -y sublime-text
+#echo '============= installing sublime =============================='
+#wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+#echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+#sudo apt-get update
+#sudo apt-get install -y sublime-text
 
 
 echo "=========installing shadowsocks-qt5-Break Wall!=========="
@@ -140,9 +140,13 @@ sudo pip2 install keras
 sudo pip2 install scikit-image
 sudo pip2 install numpy
 
+
 echo "============ install my python packages =========="
 sudo pip3 install alfred-py
 sudo pip3 install cheat
+sudo pip3 install cmake
+
+
 
 #echo "================ install text editors (vim, emacs, kate etc.)==================="
 #cd ~/Downloads
@@ -184,15 +188,15 @@ curl -s https://install.zerotier.com/ | sudo bash
 sudo zerotier-cli join e5cd7a9e1ca15f26
 
 echo "============ update cmake to a high level 3.9 ========="
-wget https://cmake.org/files/v3.12/cmake-3.12.0.tar.gz
-tar -xvf cmake-3.12.0.tar.gz
-cd cmake-3.12.0
+#wget https://cmake.org/files/v3.12/cmake-3.12.0.tar.gz
+#tar -xvf cmake-3.12.0.tar.gz
+#cd cmake-3.12.0
 sudo apt install -y curl
 sudo apt install -y libcurl4-gnutls-dev
 sudo apt install -y libcurl4-openssl-dev
-./bootstrap --system-curl
-make -j8
-sudo make install
+#./bootstrap --system-curl
+#make -j8
+#sudo make install
 
 
 echo "======== install sublime text3 =================="
