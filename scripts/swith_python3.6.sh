@@ -16,3 +16,10 @@ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 2
 # solve gnome can not open issue
 sudo cp _gi.cpython-35m-x86_64-linux-gnu.so _gi.cpython-36m-x86_64-linux-gnu.so
 sudo cp _gi_cairo.cpython-35m-x86_64-linux-gnu.so _gi_cairo.cpython-36m-x86_64-linux-gnu.so
+
+# solve the pip problem:     ModuleNotFoundError: No module named 'pkg_resources'
+sudo apt install --reinstall python3-pkg-resources python3-setuptools
+
+# solve Python.h problem
+sudo apt-get install python3.6-dev  # for python3.x installs
+
