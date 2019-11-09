@@ -20,7 +20,9 @@ sudo apt install -y libatlas-dev libatlas-base-dev
 sudo apt install -y libboost1.58-all-dev libhdf5-dev
 sudo apt install -y autoconf
 sudo apt install -y liblmdb-dev
-sudo apt install -y python3-pip
+#sudo apt install -y python3-pip
+sudo easy_install pip
+sudo easy_install pip3
 
 sudo apt-get install --assume-yes build-essential cmake cmake-gui checkinstall git libgtk2.0-dev pkg-config python-dev libboost-all-dev  libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff5-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev libxine2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev libtbb-dev libqt4-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev x264 v4l-utils unzip ffmpeg libgtk-3-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev qtbase5-dev yasm libblas-dev libopenblas-dev
 
