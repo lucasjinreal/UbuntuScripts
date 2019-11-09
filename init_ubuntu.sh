@@ -11,7 +11,7 @@ sudo apt install -y fcitx-googlepinyin
 sudo apt install -y curl
 sudo apt-get install -y fonts-powerline
 
-echo "========== !!!!!!!!!!!!!!!! Installing Deep Learning Depencies ======="
+echo "========== Installing Deep Learning Depencies ======="
 sudo apt install -y libatalas-base-dev
 sudo apt install -y fonts-noto-color-emoji
 sudo apt install -y ffmpeg
@@ -25,8 +25,6 @@ sudo easy_install pip
 sudo easy_install pip3
 
 sudo apt-get install --assume-yes build-essential cmake cmake-gui checkinstall git libgtk2.0-dev pkg-config python-dev libboost-all-dev  libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff5-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev libxine2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev libtbb-dev libqt4-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev x264 v4l-utils unzip ffmpeg libgtk-3-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev qtbase5-dev yasm libblas-dev libopenblas-dev
-
-echo "----- there tools you can not really miss them -------"
 sudo apt install -y mc
 sudo apt install -y ncdu
 
@@ -52,35 +50,26 @@ sudo apt install -y curl
 sudo apt install -y axel
 sudo apt install -y wget
 
-#echo '============= installing sublime =============================='
-#wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-#echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-#sudo apt-get update
-#sudo apt-get install -y sublime-text
-
 
 echo "=========installing shadowsocks-qt5-Break Wall!=========="
 sudo add-apt-repository -y  ppa:hzwhuang/ss-qt5
 sudo apt-get update
 sudo apt-get install -y shadowsocks-qt5
 
+
 echo "=========installing tweak tools and plank dock=========="
 sudo apt install -y unity-tweak-tool
 sudo apt install -y plank
 
-# change pip source to tsinghua / now is douban mirror
+
+echo "========= Changing pip source ================"
 cd ~
 mkdir .pip
 cd .pip
 wget https://github.com/jinfagang/UbuntuScripts/raw/master/confs/pip.conf
 cd ..
 sudo chmod -R 777 .pip
-# install unity tweak tool
-sudo apt install -y unity-tweak-tool
-# set themes and tweak style like magic close window effect
 
-# install plank
-sudo apt install -y  plank
 
 echo "--- install some pre-requirements"
 sudo apt-get install -y libcanberra-gtk-module  
@@ -90,39 +79,28 @@ sudo apt-get install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev
 
 echo "============== setup more beautiful icons ============"
 sudo add-apt-repository -y ppa:noobslab/icons
-sudo apt-get update
-sudo apt-get install -y ultra-flat-icons
-
 sudo add-apt-repository -y ppa:noobslab/icons
+sudo add-apt-repository -y ppa:noobslab/themes
+sudo add-apt-repository -y ppa:dyatlov-igor/sierra-theme
+sudo add-apt-repository -y ppa:numix/ppa  
+sudo add-apt-repository -y ppa:noobslab/icons  
+
 sudo apt-get update
 sudo apt-get install -y ultra-flat-icons-orange
-
-sudo apt-get update
 sudo apt-get install -y ultra-flat-icons-green
-
-sudo add-apt-repository -y ppa:noobslab/themes
-sudo apt-get  update
+sudo apt-get install -y ultra-flat-icons
 sudo apt-get install -y arc-flatabulous-theme
 sudo apt-get install -y ultra-flat-icons
-
 sudo apt-get install -y google-chrome-stable
-sudo add-apt-repository -y ppa:dyatlov-igor/sierra-theme
-sudo apt update
 sudo apt install -y sierra-gtk-theme
 sudo apt install -y unity-tweak-tool
 sudo apt install -y python3-tk
-
-
-
-
-# install numix theme
-sudo add-apt-repository -y ppa:numix/ppa  
-sudo apt-get update 
 sudo apt-get install -y numix-gtk-theme  
 sudo apt-get install -y numix-icon-theme-circle  
-sudo add-apt-repository -y ppa:noobslab/icons  
-sudo apt-get update  
 sudo apt-get install -y ultra-flat-icons
+sudo apt install -y unity-tweak-tool
+sudo apt install -y  plank
+
 
 echo "=========setting up python3 library=========="
 sudo apt update
@@ -149,25 +127,9 @@ sudo pip3 install cheat
 sudo pip3 install cmake
 
 
-
-#echo "================ install text editors (vim, emacs, kate etc.)==================="
-#cd ~/Downloads
-#wget http://mirrors.ustc.edu.cn/kde/unstable/kate/Kate-16.08-x86_64.AppImage
-#sudo chmod -R 777 Kate-16.08-x86_64.AppImage
-#sudo mv Kate-16.08-x86_64.AppImage /usr/bin/kate
-#git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-
-
 echo "============ installing Oracle Java8 =================="
 sudo add-apt-repository -y ppa:webupd8team/java
 sudo apt update; sudo apt install -y oracle-java8-installer
-
-echo "=========== install typora ============="
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE
-sudo add-apt-repository -y 'deb http://typora.io linux/'
-sudo apt-get update
-sudo apt-get install -y typora
 
 
 echo "======== install enssential libs ========="
@@ -201,18 +163,29 @@ sudo apt install -y libcurl4-openssl-dev
 #sudo make install
 
 
-echo "======== install sublime text3 =================="
+echo "======== Install Editors =================="
 sudo add-apt-repository -y ppa:wereturtle/ppa
 sudo apt-get update
 sudo apt-get install -y ghostwriter
-
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE
+sudo add-apt-repository -y 'deb http://typora.io linux/'
+sudo apt-get update
+sudo apt-get install -y typora
 sudo add-apt-repository -y ppa:peek-developers/stable
 sudo apt update
 sudo apt install -y peek
 
+
+echo "================ install z, your know z??? ===================="
+wget https://github.com/rupa/z/raw/master/z.sh ~/
+echo ". ~/z.sh" >> ~/.zshrc
+source ~/.zshrc
+echo "OK! Your z setup finished."
+
 echo "=========installing zsh-a beautiful terminal=========="
 sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 
 echo "================ install emacs and setup for it===================="
@@ -228,22 +201,11 @@ wget https://github.com/jinfagang/UbuntuScripts/raw/master/ShellRepo/imgcat
 sudo mv imgcat /usr/local/bin/
 echo 'alias imgcat="bash /usr/local/bin/imgcat"' >> ~/.zshrc
 
-# add autojump to zshrc
-echo 'plugins=(git autojump)' >> ~/.zshrc
 
 source ~/.zshrc
-
 cd ~
 wget https://github.com/anmoljagetia/Flatabulous/releases/download/16.04.1/Flatabulous-Theme.deb
 sudo dpkg -i Flatabulous-Theme.deb
-
-
-echo "================ install z, your know z??? ===================="
-wget https://github.com/rupa/z/raw/master/z.sh ~/
-echo ". ~/z.sh" >> ~/.zshrc
-source ~/.zshrc
-echo "OK! Your z setup finished."
-
 
 echo "All Done! Congratulations! Enjoy your Ubuntu!"
 echo "Please manually reboot your system now!"
