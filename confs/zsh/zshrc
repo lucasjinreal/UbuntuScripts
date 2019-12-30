@@ -137,5 +137,8 @@ alias nu="nautilus ."
 export TURTLEBOT3_MODEL=burger
 export CITYSCAPES_DATASET=/media/jintain/sg/permanent/datasets/Cityscapes
 
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+
 
 eval $(thefuck --alias)
