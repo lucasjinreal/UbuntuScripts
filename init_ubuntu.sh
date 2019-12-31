@@ -219,6 +219,8 @@ sudo apt-add-repository ppa:fish-shell/release-3
 sudo apt update
 sudo apt install fish
 chsh -s /usr/bin/fish
+curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
+
 
 
 echo -e ${BGreen}"All Done! Congratulations! Enjoy your Ubuntu!"

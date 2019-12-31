@@ -1,0 +1,1 @@
+/home/fagangjin/.fzf/shell/key-bindings.fish
