@@ -215,9 +215,9 @@ wget https://github.com/jinfagang/UbuntuScripts/raw/master/confs/vimrc -O ~/.vim
 wget https://github.com/jinfagang/UbuntuScripts/raw/master/ShellRepo/imgcat
 sudo mv imgcat /usr/local/bin/
 echo 'alias imgcat="bash /usr/local/bin/imgcat"' >> ~/.zshrc
-sudo apt-add-repository ppa:fish-shell/release-3
+sudo apt-add-repository  -y ppa:fish-shell/release-3
 sudo apt update
-sudo apt install fish
+sudo apt install -y fish
 chsh -s /usr/bin/fish
 curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
 
