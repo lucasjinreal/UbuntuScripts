@@ -209,16 +209,19 @@ print_msg "Final terminal setup"
 sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+
 sudo apt install -y emacs
 wget https://github.com/jinfagang/UbuntuScripts/raw/master/confs/init.el -O ~/.emacs.d/
 wget https://github.com/jinfagang/UbuntuScripts/raw/master/confs/vimrc -O ~/.vimrc
+wget https://github.com/jinfagang/UbuntuScripts/raw/master/confs/zsh/zshrc -O ~/.zshrc
 wget https://github.com/jinfagang/UbuntuScripts/raw/master/ShellRepo/imgcat
 sudo mv imgcat /usr/local/bin/
 echo 'alias imgcat="bash /usr/local/bin/imgcat"' >> ~/.zshrc
 sudo apt-add-repository  -y ppa:fish-shell/release-3
 sudo apt update
 sudo apt install -y fish
-chsh -s /usr/bin/fish
 curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
 
 
