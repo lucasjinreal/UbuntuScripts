@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/jintian/.oh-my-zsh"
+  export ZSH="/home/fagangjin/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -11,7 +11,10 @@
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="agnoster"
 #ZSH_THEME="oxide"
-ZSH_THEME="geoffgarside"
+#ZSH_THEME="geoffgarside"
+ZSH_THEME="fishy"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -66,8 +69,11 @@ ZSH_THEME="geoffgarside"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  autojump
+  git zsh-z
+#  autojump
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  dnf
 )
 
 
@@ -103,42 +109,68 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-export PATH=/usr/local/cuda/bin:$PATH:/usr/local/go/bin
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+########## Override autosuggestions ##########
+# export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,bg=white,underline"
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+
+########## Global Variables ############
+CUDA_HOME=/usr/local/cuda
+MYHOME=$HOME
+MY=`whoami`
+
+########## Exported paths ###################
+export PATH=/usr/local/cuda/bin:$PATH:/usr/local/go/bin
+#export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/home/fagangjin/tensorrt5.0.2/lib/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/media/${MY}/samsung/source/ai/inno/onnx-tensorrt/build:/media/${MY}/samsung/source/ai/inno/maskrcnn_trt_onnx/build:$HOME/TensorRT_git/build:/home/fagangjin/work/trt_engine_check/build:$LD_LIBRARY_PATH
 export CMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH:/usr/local/include/eigen3/cmake"
 
-alias work="cd /media/jintian/data"
-alias work2="cd /media/jintian/sg/ai/career/robot/ctirobot"
-alias work3="cd /media/jintian/wd"
-#source /opt/ros/melodic/setup.zsh
-#alias rm='rm -i'
-
-alias todo="gedit ~/.todo.txt"
-
-
-CAFFE_ROOT="/home/jintian/caffe/python"
-
-alias clion=/opt/clion-2018.3.3/bin/clion.sh
-alias goland="/opt/GoLand-2018.3.2/bin/goland.sh"
-
-
-alias rs="source /opt/ros/kinetic/setup.zsh"
-alias kiss2="source /opt/ros/crystal/setup.zsh"
-
-alias initreal="source /media/jintain/wd/ros/fusion/catkin_ws_realsense/devel/setup.zsh"
-
-alias cloud-ss='ssh root@47.106.163.216'
-
-
-
-alias nu="nautilus ."
+export C_INCLUDE_PATH=${CUDA_HOME}/include:${C_INCLUDE_PATH}
+export CPLUS_INCLUDE_PATH=${HOME}/TensorRT/include:$CPLUS_INCLUDE_PATH
+export LIBRARY_PATH=${CUDA_HOME}/lib64:$LIBRARY_PATH
 
 export TURTLEBOT3_MODEL=burger
-export CITYSCAPES_DATASET=/media/jintain/sg/permanent/datasets/Cityscapes
+export CITYSCAPES_DATASET=/media/${MY}/sg/permanent/datasets/Cityscapes
 
-export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
-export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+export CUDACXX=/usr/local/cuda/bin/nvcc
+export PYTHONPATH=$PYTHONPATH:/media/${MY}/sg/ai/career/autox/work/dl/Mask_RCNN
+
+
+
+########## Alias #############################
+alias work="cd /media/${MY}/wd"
+alias work2="cd /media/${MY}/wd/ai/career/autox"
+alias work3="cd /media/${MY}/samsung/source/ai"
+alias work4="cd /media/${MY}/samsung/source/career"
+alias todo="gedit ~/.todo.txt"
+alias clion=/opt/clion-2019.2/bin/clion.sh
+alias goland="/opt/GoLand-2018.3.2/bin/goland.sh"
+alias rs="source /opt/ros/kinetic/setup.zsh"
+alias kiss2="source /opt/ros/crystal/setup.zsh"
+alias initreal="source /media/${MY}/wd/ros/fusion/catkin_ws_realsense/devel/setup.zsh"
+alias cloud-ss='ssh root@47.106.163.216'
+alias autox='cd /autox-sz/'
+alias nu="nautilus ."
+alias hp="http_proxy=http://localhost:8123"
+alias tryit="cd /media/${MY}/samsung/weapons/tryit"
+alias ax="cd /autox-sz/users/${MY}"
 
 
 eval $(thefuck --alias)
+
+### ZNT's installer added snippet ###
+fpath=( "$fpath[@]" "$HOME/.config/znt/zsh-navigation-tools" )
+autoload n-aliases n-cd n-env n-functions n-history n-kill n-list n-list-draw n-list-input n-options n-panelize n-help
+autoload znt-usetty-wrapper znt-history-widget znt-cd-widget znt-kill-widget
+alias naliases=n-aliases ncd=n-cd nenv=n-env nfunctions=n-functions nhistory=n-history
+alias nkill=n-kill noptions=n-options npanelize=n-panelize nhelp=n-help
+zle -N znt-history-widget
+bindkey '^R' znt-history-widget
+setopt AUTO_PUSHD HIST_IGNORE_DUPS PUSHD_IGNORE_DUPS
+zstyle ':completion::complete:n-kill::bits' matcher 'r:|=** l:|=*'
+### END ###
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
