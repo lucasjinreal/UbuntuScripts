@@ -70,10 +70,10 @@ ZSH_THEME="fishy"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git zsh-z
-#  autojump
+  autojump
   zsh-autosuggestions
   zsh-syntax-highlighting
-  dnf
+  #dnf
 )
 
 
@@ -154,6 +154,8 @@ alias nu="nautilus ."
 alias hp="http_proxy=http://localhost:8123"
 alias tryit="cd /media/${MY}/samsung/weapons/tryit"
 alias ax="cd /autox-sz/users/${MY}"
+
+alias sl=ls
 
 
 eval $(thefuck --alias)
