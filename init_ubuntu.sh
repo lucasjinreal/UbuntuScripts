@@ -55,7 +55,7 @@ print_msg "installing Chinese input source"
 sudo add-apt-repository -y ppa:fcitx-team/nightly  
 sudo apt update
 sudo apt install -y fcitx
-sudo apt -f install
+sudo apt -f -y install
 sudo apt install -y fcitx-config-gtk 
 sudo apt install -y  im-switch
 sudo apt install -y fcitx-googlepinyin
