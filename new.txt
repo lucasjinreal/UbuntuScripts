@@ -1,0 +1,3 @@
+sudo add-apt add-apt-repository ppa:yannubuntu/boot-repair
+# apt-get update
+# apt-get install boot-repair
