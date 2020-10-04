@@ -8,6 +8,12 @@ When you installed a new machine, you need to build all enviroment you need, but
 
 Then almost everything will be installed automatically, **especially for deep learning libs**.
 
+
+## Updates
+
+- **2020.09.14**: iPhone12 gonna release...
+
+
 ## Various install commands
 
 To install a thing on new mechine is a headache thing, but now with this repo, everything becomes as simple as a piece of cake. We support setup from deeplearning libraries to new system setups, even some scripts during process images you can find here!
