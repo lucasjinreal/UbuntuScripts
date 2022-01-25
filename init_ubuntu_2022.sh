@@ -102,6 +102,7 @@ sudo apt install -y ffmpeg
 sudo apt install -y exfat-utils
 sudo apt install -y libnodejs-dev
 sudo apt install -y npm
+sudo apt install -y autojump
 
 
 ################### For connecting ######################
