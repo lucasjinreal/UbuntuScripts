@@ -103,7 +103,8 @@ sudo apt install -y exfat-utils
 sudo apt install -y libnodejs-dev
 sudo apt install -y npm
 sudo apt install -y autojump
-
+sudo apt install -y docker.io
+sudo apt-get install -y ubuntu-restricted-extras
 
 ################### For connecting ######################
 print_msg "Connect to my network"
